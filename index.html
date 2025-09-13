@@ -1,606 +1,1062 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jannes - Full Stack Developer & Software Engineer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" as="image" href="https://github.com/n1yshi.png">
+    <link rel="stylesheet" href="saveweb2zip-com-miwa-lol/css/d88a832607da2b95.css" data-precedence="next">
+    <link rel="stylesheet" href="saveweb2zip-com-miwa-lol/css/69b24383303fdf94.css" data-precedence="next">
+    <link rel="stylesheet" href="saveweb2zip-com-miwa-lol/css/5564d91a7281e3c7.css" data-precedence="next">
+    <link rel="stylesheet" href="saveweb2zip-com-miwa-lol/css/b7cdf4c5e65fe17c.css" data-precedence="next">
+    <meta name="next-size-adjust" content="">
+    <title>@N1yshi</title>
+    <meta name="description" content="Passionate full-stack developer from Germany">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="robots" content="index, follow, noimageindex">
+    <meta property="og:title" content="@N1yshi | Full Stack Developer">
+    <meta property="og:description" content="Passionate full-stack developer from Germany">
+    <meta property="og:url" content="https://n1yshi.github.io">
+    <meta property="og:image" content="https://github.com/n1yshi.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="@N1yshi">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@N1yshi | Full Stack Developer">
+    <meta name="twitter:description" content="Passionate full-stack developer from Germany">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/n1yshi">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="630">
+    <meta name="twitter:image:alt" content="@N1yshi">
+    <meta name="twitter:image:type" content="image/png">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/n1yshi" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/n1yshi" sizes="16x16" type="image/image/jpeg">
+    <meta name="theme-color" content="#ffffff">
+    
+    <style>
+        @font-face {
+            font-family: CustomFont;
+            src: url(https://cdn.miwa.lol/fonts/63d7f08b-dc9a-47f2-a4ae-9336af33e817.otf)
+        }
+        
+        html {
+            font-family: CustomFont, 'Nunito', 'Nunito Fallback'
+        }
+
+        /* Custom Cursor */
+        * {
+            cursor: none !important;
+        }
+
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        }
+
+        .custom-cursor-trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        /* Cursor hover effects */
+        a:hover ~ .custom-cursor,
+        button:hover ~ .custom-cursor,
+        [role="button"]:hover ~ .custom-cursor {
+            transform: scale(1.5);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        /* Hide cursor when over iframes */
+        iframe:hover ~ .custom-cursor,
+        iframe:hover ~ .custom-cursor-trail {
+            opacity: 0 !important;
+        }
+
+        /* Spotify embed styling */
+        .spotify-embed-container {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .spotify-embed-container:hover {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .spotify-embed-container:hover iframe {
+            pointer-events: none;
+        }
+
+        .spotify-embed-container:hover ~ .custom-cursor,
+        .spotify-embed-container:hover ~ .custom-cursor-trail {
+            opacity: 0 !important;
+        }
+
+        /* Volume Control */
+        .volume-control {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .volume-control:hover {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.9);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .volume-icon {
+            color: #fff;
+            width: 20px;
+            height: 20px;
+        }
+
+        .volume-slider {
+            width: 100px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .volume-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            background: #667eea;
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .volume-slider::-moz-range-thumb:hover {
+            transform: scale(1.2);
+            background: #667eea;
+        }
+
+        .volume-percentage {
+            color: #fff;
+            font-size: 0.8rem;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+                rgba(0, 0, 0, 0.85);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            animation: gradientShift 20s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .projects-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .projects-title h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 800;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .projects-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+
+        .projects-title p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            cursor: none;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.5) 50%, #fff 100%);
+            transform: scaleX(0);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover::after {
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            background: rgba(0, 0, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 0 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card-content {
+            padding: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card h3 {
+            color: #fff;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover h3 {
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .project-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            transition: color 0.3s ease;
+        }
+
+        .project-card:hover p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-tag {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 0.4rem 1rem;
+            border-radius: 1.5rem;
+            font-size: 0.8rem;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .project-tag:hover::before {
+            left: 100%;
+        }
+
+        .project-tag:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .project-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 0.75rem 1.25rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .project-link:hover::before {
+            left: 100%;
+        }
+
+        .project-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .project-link:hover svg {
+            transform: scale(1.1);
+        }
+
+        .view-all-projects {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .view-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-all-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .view-all-btn:hover::before {
+            left: 100%;
+        }
+
+        .view-all-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .projects-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .project-card-content {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Click to Enter Overlay */
+        .enter-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+        }
+
+        .enter-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .enter-heart {
+            font-size: 8rem;
+            color: white;
+            margin-bottom: 2rem;
+            animation: heartbeat 2s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .enter-text {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 300;
+            text-align: center;
+            opacity: 0.6;
+            animation: fadeInOut 3s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Hide main content initially */
+        .main-content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .main-content.visible {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">Jannes</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Click to Enter Overlay -->
+    <div class="enter-overlay" id="enterOverlay">
+        <div class="enter-heart">&lt;3</div>
+        <div class="enter-text">Click to enter</div>
+    </div>
 
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        Full Stack Developer<br>from Germany
-                    </h1>
-                    <p class="hero-description">
-                        Passionate full-stack developer creating robust web applications, 
-                        browser extensions, and distributed systems with modern technologies.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="floating-card">
-                        <div class="card-content">
-                            <i class="fas fa-code"></i>
-                            <span>Web Development</span>
-                        </div>
-                    </div>
-                    <div class="floating-card">
-                        <div class="card-content">
-                            <i class="fas fa-server"></i>
-                            <span>Backend Systems</span>
-                        </div>
-                    </div>
-                    <div class="floating-card">
-                        <div class="card-content">
-                            <i class="fas fa-puzzle-piece"></i>
-                            <span>Browser Extensions</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-animation"></div>
-    </section>
+    <!-- Volume Control -->
+    <div class="volume-control" id="volumeControl">
+        <svg class="volume-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="30">
+        <span class="volume-percentage" id="volumePercentage">30%</span>
+    </div>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Crafting digital experiences with passion and precision</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Passionate full-stack developer creating robust web applications, 
-                        browser extensions, and distributed systems with modern technologies.
-                    </p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <div class="skills">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Backend</h3>
-                        <div class="skills">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">Express</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Database & Tools</h3>
-                        <div class="skills">
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">Redis</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Docker</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">All Projects</h2>
-                <p class="section-subtitle">Complete showcase of my development work</p>
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+    <div hidden=""><!--$--><!--/$--></div>
+    <div>
+        <div class="cf-turnstile sr-only" data-callback="tsCb" data-sitekey="0x4AAAAAAAcD2Vri2zu5qsPx" data-action="profile-view" data-cdata="612bac422ecda9f546a217e5310bd4fc"></div>
+        <div class="profile-module__Z7zZjG__wrapper" style="--profile-blur:3px;--accent-color:#ffffff;--text-color:#ffffff;--background-color:#000000;--content-background-color:rgba(0,0,0,var(--opacity));--opacity:0.11;--link-color:#ffffff">
+            
+            <!-- Video Background -->
+            <div class="pointer-events-none absolute inset-0 z-0 h-full w-[var(--wrapper-width,100%)]" style="filter:blur(15px)">
+                <video src="saveweb2zip-com-miwa-lol/media/2437f217-6716-49fd-a6e3-c90d581aa6e9.mp4" loop="" class="size-full object-cover" disablepictureinpicture="" disableremoteplayback="" playsinline="" autoplay muted></video>
             </div>
             
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
-                <button class="filter-btn" data-filter="extension">Extensions</button>
-                <button class="filter-btn" data-filter="system">Systems</button>
-                <button class="filter-btn" data-filter="security">Security</button>
-                <button class="filter-btn" data-filter="minecraft">Minecraft</button>
+                        
+            <div class="absolute right-4 top-4 z-50 flex gap-4"></div>
+            
+            <!-- Main Profile Container -->
+            <div class="profile-module__Z7zZjG__container">
+                <div class="px-3 md:p-12 z-40 py-12 m-4 rounded-lg text-[--text-color] bg-[--content-background-color] backdrop-blur-[--profile-blur] min-w-80 relative max-lg:w-11/12 transition-transform will-change-transform duration-300 ease-tilt" id="profileCard">
+                    
+                    <!-- Profile Stats (Bottom Left) -->
+                    <div class="absolute bottom-4 flex items-center gap-2 ltr:left-4 rtl:right-4">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Germany" target="_blank" class="flex items-center gap-1" rel="noopener noreferrer nofollow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true">
+                                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Germany
+                        </a>
+                    </div>
+                    
+                    <!-- Profile Header -->
+                    <div class="mb-8 grid items-start gap-4 has-[img]:grid-cols-[7rem_auto] max-md:px-2 md:items-center">
+                        <div class="relative flex items-center justify-center">
+                            <img alt="@N1yshi's avatar" draggable="false" width="112" height="112" decoding="async" data-nimg="1" class="size-28 object-cover rounded-xl" style="color:transparent" src="https://github.com/n1yshi.png" onerror="this.src='https://via.placeholder.com/112x112/333/fff?text=N'">
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <h1 class="text-4xl font-bold drop-shadow-glow">N1yshi</h1>
+                                <div class="flex gap-1.5 empty:hidden">
+                                    <!-- Developer Badge -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bug drop-shadow-glow" aria-hidden="true" style="--glow-color:#ffffff">
+                                        <path d="M12 20v-9"></path>
+                                        <path d="M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z"></path>
+                                        <path d="M14.12 3.88 16 2"></path>
+                                        <path d="M21 21a4 4 0 0 0-3.81-4"></path>
+                                        <path d="M21 5a4 4 0 0 1-3.55 3.97"></path>
+                                        <path d="M22 13h-4"></path>
+                                        <path d="M3 21a4 4 0 0 1 3.81-4"></path>
+                                        <path d="M3 5a4 4 0 0 0 3.55 3.97"></path>
+                                        <path d="M6 13H2"></path>
+                                        <path d="m8 2 1.88 1.88"></path>
+                                        <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13"></path>
+                                    </svg>
+                                    <!-- Premium Badge -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles drop-shadow-glow" aria-hidden="true" style="--glow-color:#ffffff">
+                                        <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                                        <path d="M20 2v4"></path>
+                                        <path d="M22 4h-4"></path>
+                                        <circle cx="4" cy="20" r="2"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="break-words text-lg" id="typewriterText">Passionate full-stack developer from Germany</span>
+                                <span class="mb-0.5 animate-blink pl-0.5 text-lg">|</span>
+                            </div>
+                            <p class="text-sm" style="color:rgba(255,255,255,0.7)">Building the web since 2020</p>
+                        </div>
+                    </div>
+                    
+                    <!-- GitHub Card -->
+                    <div class="grid max-h-96 justify-items-center gap-4 overflow-y-auto overflow-x-hidden md:grid-cols-[repeat(var(--cols),1fr)]" style="--cols:1">
+                        <div class="relative flex h-24 w-full items-center rounded-2xl bg-black/40 max-md:w-[21rem] md:min-w-96 md:max-w-96">
+                            <div class="relative flex size-full items-center gap-2 rounded-2xl px-2">
+                                <img alt="N1yshi's GitHub avatar" draggable="false" loading="lazy" width="78" height="78" decoding="async" data-nimg="1" class="rounded-xl" style="color: transparent;" src="https://avatars.githubusercontent.com/u/n1yshi" onerror="this.src='https://via.placeholder.com/78x78/333/fff?text=GH'">
+                                <div class="truncate">
+                                    <a class="text-lg font-semibold" href="https://github.com/n1yshi" target="_blank">n1yshi</a>
+                                    <p class="truncate text-sm text-[--text-color]">Full Stack Developer & Software Engineer</p>
+                                    <div class="mt-1 flex items-center gap-2 text-sm text-[--text-color]">
+                                        <span class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar size-5" aria-hidden="true">
+                                                <path d="M8 2v4"></path>
+                                                <path d="M16 2v4"></path>
+                                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                                <path d="M3 10h18"></path>
+                                            </svg> 
+                                            Active on GitHub
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spotify Embed -->
+                    <div class="flex justify-center pb-4 pt-6">
+                        <div class="spotify-embed-container" style="width: 100%;">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/70YTBH8vOGJNMhy6186yFm?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex flex-wrap justify-center gap-3 pb-4 pt-2 max-md:px-10">
+                        <a href="https://github.com/n1yshi" target="_blank" rel="nofollow" class="profile-module__Z7zZjG__link profile-module__Z7zZjG__monochrome">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="--glow-color:var(--link-color)" class="size-8 drop-shadow-glow">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitch.tv/masterm142" target="_blank" rel="nofollow" class="profile-module__Z7zZjG__link profile-module__Z7zZjG__monochrome">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#9146FF" viewBox="0 0 24 24" style="--glow-color:var(--link-color)" class="size-8 drop-shadow-glow">
+                                <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://open.spotify.com/user/n1yshi" target="_blank" rel="nofollow" class="profile-module__Z7zZjG__link profile-module__Z7zZjG__monochrome">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1db954" viewBox="0 0 24 24" style="--glow-color:var(--link-color)" class="size-8 drop-shadow-glow">
+                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="projects-container">
+            <div class="projects-title">
+                <h2>Featured Projects</h2>
+                <p>A showcase of my latest development work</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- ClipsWebsite for NetamiTV -->
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>ClipsWebsite for NetamiTV</h3>
+                        <p>Comprehensive web platform for managing video clips with user authentication, Discord integration, admin panel, and IP-based security features.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">HTML/CSS</span>
+                        </div>
+                        <a href="https://github.com/n1yshi/ClipsWebsite-forNetamiTV" target="_blank" class="project-link">
+                            View Repository →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Password Generator Extension -->
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>Password Generator Extension</h3>
+                        <p>Modern browser extension for generating cryptographically secure passwords with real-time strength analysis and intelligent auto-fill capabilities.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Chrome API</span>
+                            <span class="project-tag">CSS3</span>
+                        </div>
+                        <a href="https://github.com/n1yshi/PasswordGen-Extension" target="_blank" class="project-link">
+                            View Repository →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Task Management System -->
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>Task Management System</h3>
+                        <p>Real-time collaborative task management application with drag & drop Kanban board, WebSocket integration, and team collaboration features.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com/n1yshi/TaskManagementSystem" target="_blank" class="project-link">
+                            View Repository →
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="projects-grid" id="projects-grid">
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <button class="project-link" onclick="downloadProject('ClipsWebsite-forNetamiTV-main', event)" title="Download Project">
-                                    <i class="fas fa-download"></i>
-                                </button>
-                                <button class="project-link" onclick="viewProject('clips-website', event)" title="View Details">
-                                    <i class="fas fa-info-circle"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">HTML/CSS</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">ClipsWebsite for NetamiTV</h3>
-                        <p class="project-description">
-                            Comprehensive web platform for managing video clips with user authentication, 
-                            Discord integration, admin panel, and IP-based security features.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">User Dashboard</span>
-                            <span class="feature-tag">Discord Auth</span>
-                            <span class="feature-tag">Admin Panel</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="system">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <button class="project-link" onclick="downloadProject('CPP-FileProcessor-main', event)" title="Download Project">
-                                    <i class="fas fa-download"></i>
-                                </button>
-                                <button class="project-link" onclick="viewProject('cpp-processor', event)" title="View Details">
-                                    <i class="fas fa-info-circle"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">File Processing</span>
-                            <span class="tech-tag">Performance</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">CPP File Processor</h3>
-                        <p class="project-description">
-                            High-performance file processing system built in C++ for handling large datasets 
-                            with optimized memory management and parallel processing capabilities.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">High Performance</span>
-                            <span class="feature-tag">Memory Optimized</span>
-                            <span class="feature-tag">Parallel Processing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="system">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('distributed-transaction-system-main')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('distributed-system')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Microservices</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">API Gateway</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Distributed Transaction System</h3>
-                        <p class="project-description">
-                            Scalable distributed system architecture for handling complex transactions 
-                            across multiple services with fault tolerance and consistency guarantees.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Microservices</span>
-                            <span class="feature-tag">Fault Tolerant</span>
-                            <span class="feature-tag">Scalable</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('Enterprise-platform-main')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('enterprise-platform')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Enterprise</span>
-                            <span class="tech-tag">Scalable</span>
-                            <span class="tech-tag">Cloud</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Enterprise Platform</h3>
-                        <p class="project-description">
-                            Comprehensive enterprise-grade platform with advanced features for business 
-                            management, analytics, and workflow automation.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Enterprise Grade</span>
-                            <span class="feature-tag">Analytics</span>
-                            <span class="feature-tag">Automation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="minecraft">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('NetamiTV-BanSystem-Plugin')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('ban-system')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Minecraft</span>
-                            <span class="tech-tag">Plugin</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">NetamiTV Ban System Plugin</h3>
-                        <p class="project-description">
-                            Advanced Minecraft server plugin for comprehensive ban management with 
-                            database integration and administrative tools.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Ban Management</span>
-                            <span class="feature-tag">Database</span>
-                            <span class="feature-tag">Admin Tools</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('NetamiTV-Bot-Old-Source-main')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('netami-bot')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Discord.js</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Bot</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">NetamiTV Discord Bot</h3>
-                        <p class="project-description">
-                            Feature-rich Discord bot with moderation, entertainment, and utility commands 
-                            for community management and user engagement.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Moderation</span>
-                            <span class="feature-tag">Entertainment</span>
-                            <span class="feature-tag">Utility</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="extension">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('PasswordGen-Extension-main')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('password-generator')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Chrome API</span>
-                            <span class="tech-tag">CSS3</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">SecurePass Generator</h3>
-                        <p class="project-description">
-                            Modern browser extension for generating cryptographically secure passwords with 
-                            real-time strength analysis and intelligent auto-fill capabilities.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Crypto Security</span>
-                            <span class="feature-tag">Auto-fill</span>
-                            <span class="feature-tag">Dark Mode</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="security">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('Phishing-DetectorURL-main')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('phishing-detector')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Security</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Phishing URL Detector</h3>
-                        <p class="project-description">
-                            Advanced security tool using machine learning algorithms to detect and prevent 
-                            phishing attacks by analyzing URL patterns and website characteristics.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">ML Detection</span>
-                            <span class="feature-tag">Security</span>
-                            <span class="feature-tag">Real-time</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="system">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('Polyglot-System-main')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('polyglot-system')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Multi-Language</span>
-                            <span class="tech-tag">System</span>
-                            <span class="tech-tag">Integration</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Polyglot System</h3>
-                        <p class="project-description">
-                            Multi-language system architecture supporting various programming languages 
-                            with seamless integration and cross-platform compatibility.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Multi-Language</span>
-                            <span class="feature-tag">Cross-Platform</span>
-                            <span class="feature-tag">Integration</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="minecraft">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('Report-Plugin-Minecraft')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('report-plugin')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Minecraft</span>
-                            <span class="tech-tag">Plugin</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Report Plugin Minecraft</h3>
-                        <p class="project-description">
-                            Comprehensive reporting system for Minecraft servers with advanced moderation 
-                            tools and automated response mechanisms.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Reporting System</span>
-                            <span class="feature-tag">Moderation</span>
-                            <span class="feature-tag">Automation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('TaskManagementSystem-main')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('task-management')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Task Management System</h3>
-                        <p class="project-description">
-                            Real-time collaborative task management application with drag & drop Kanban board, 
-                            WebSocket integration, and team collaboration features.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Real-time</span>
-                            <span class="feature-tag">Drag & Drop</span>
-                            <span class="feature-tag">Collaboration</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="extension">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('Twitch-LiveStreamer-Extension-main')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('twitch-extension')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Twitch API</span>
-                            <span class="tech-tag">WebExtension</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Twitch LiveStreamer Extension</h3>
-                        <p class="project-description">
-                            Browser extension for Twitch streamers with enhanced features for stream management, 
-                            viewer interaction, and real-time analytics integration.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Stream Tools</span>
-                            <span class="feature-tag">Analytics</span>
-                            <span class="feature-tag">Real-time</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" onclick="downloadProject('TwitchWatchtimeBot-main')">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="#" class="project-link" onclick="viewProject('twitch-bot')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Twitch API</span>
-                            <span class="tech-tag">Bot</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Twitch Watchtime Bot</h3>
-                        <p class="project-description">
-                            Automated Twitch bot for tracking viewer watchtime, managing rewards, 
-                            and providing interactive features for stream communities.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag">Watchtime Tracking</span>
-                            <span class="feature-tag">Rewards</span>
-                            <span class="feature-tag">Interactive</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="view-all-projects">
+                <a href="projects.html" class="view-all-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 7h10v10"></path>
+                        <path d="M7 17 17 7"></path>
+                    </svg>
+                    View All Projects
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title"></h2>
-                <p class="section-subtitle"></p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <p>Germany</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Specialization</h3>
-                            <p>Full Stack Development</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/n1yshi" class="social-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://twitch.tv/masterm142" class="social-link" target="_blank">
-                        <i class="fab fa-twitch"></i>
-                        <span>Twitch</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop style="display: none;">
+        <source src="back.mp3" type="audio/mpeg">
+    </audio>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Jannes. All rights reserved.</p>
-                <p>Built with passion and modern web technologies</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-trail" id="cursorTrail"></div>
 
-    <script src="script.js"></script>
+    <script>
+        // Typewriter effect
+        const texts = [
+            "Passionate full-stack developer from Germany",
+            "Building modern web applications",
+            "Creating browser extensions",
+            "Developing distributed systems"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriterText');
+
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Start typewriter effect
+        typeWriter();
+
+        
+        // Profile card tilt effect
+        const profileCard = document.getElementById('profileCard');
+        if (profileCard) {
+            profileCard.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+            
+            profileCard.addEventListener('mouseleave', function() {
+                this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        }
+
+        // Auto-play video with sound control
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('video');
+            if (video) {
+                video.play().catch(e => console.log('Video autoplay failed:', e));
+            }
+        });
+
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        const cursorTrail = document.getElementById('cursorTrail');
+        let mouseX = 0;
+        let mouseY = 0;
+        let trailX = 0;
+        let trailY = 0;
+
+        // Update cursor position
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            cursor.style.left = mouseX - 10 + 'px';
+            cursor.style.top = mouseY - 10 + 'px';
+        });
+
+        // Animate cursor trail
+        function animateTrail() {
+            trailX += (mouseX - trailX) * 0.1;
+            trailY += (mouseY - trailY) * 0.1;
+            
+            cursorTrail.style.left = trailX - 4 + 'px';
+            cursorTrail.style.top = trailY - 4 + 'px';
+            
+            requestAnimationFrame(animateTrail);
+        }
+        animateTrail();
+
+        // Cursor hover effects
+        const hoverElements = document.querySelectorAll('a, button, [role="button"], .project-card');
+        
+        hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                cursor.style.transform = 'scale(1.5)';
+                cursor.style.background = 'rgba(255, 255, 255, 1)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.background = 'rgba(255, 255, 255, 0.8)';
+            });
+        });
+
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', function() {
+            cursor.style.opacity = '0';
+            cursorTrail.style.opacity = '0';
+        });
+
+        document.addEventListener('mouseenter', function() {
+            cursor.style.opacity = '1';
+            cursorTrail.style.opacity = '1';
+        });
+
+        // YouTube Video Changer
+        const youtubeVideos = [
+            'dQw4w9WgXcQ', // Rick Astley - Never Gonna Give You Up
+            'L_jWHffIx5E', // Smash Mouth - All Star
+            'ZZ5LpwO-An4', // HEYYEYAAEYAAAEYAEYAA
+            'y6120QOlsfU', // Darude - Sandstorm
+            'kJQP7kiw5Fk', // Luis Fonsi - Despacito
+            'fJ9rUzIMcZQ', // Queen - Bohemian Rhapsody
+            'hTWKbfoikeg', // Nirvana - Smells Like Teen Spirit
+            'QH2-TGUlwu4', // Nyan Cat
+            'oHg5SJYRHA0', // RickRoll
+            'iik25wqIuFo'  // Rebecca Black - Friday
+        ];
+
+        let currentVideoIndex = 0;
+
+        function changeYouTubeVideo() {
+            currentVideoIndex = (currentVideoIndex + 1) % youtubeVideos.length;
+            const videoId = youtubeVideos[currentVideoIndex];
+            const iframe = document.querySelector('.music-player.youtube iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        }
+
+        // Add music player hover effects to cursor
+        const musicElements = document.querySelectorAll('.music-player, .music-btn');
+        musicElements.forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                cursor.style.transform = 'scale(1.5)';
+                cursor.style.background = 'rgba(255, 255, 255, 1)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.background = 'rgba(255, 255, 255, 0.8)';
+            });
+        });
+
+        // Handle cursor behavior over iframes (Spotify embeds)
+        const iframes = document.querySelectorAll('iframe');
+        const spotifyContainer = document.querySelector('.spotify-embed-container');
+        
+        if (spotifyContainer) {
+            spotifyContainer.addEventListener('mouseenter', function() {
+                cursor.style.opacity = '0';
+                cursorTrail.style.opacity = '0';
+            });
+            
+            spotifyContainer.addEventListener('mouseleave', function() {
+                cursor.style.opacity = '1';
+                cursorTrail.style.opacity = '1';
+            });
+        }
+
+        // Handle cursor for all music player iframes
+        const musicPlayerContainers = document.querySelectorAll('.music-player-content');
+        musicPlayerContainers.forEach(container => {
+            container.addEventListener('mouseenter', function() {
+                cursor.style.opacity = '0';
+                cursorTrail.style.opacity = '0';
+            });
+            
+            container.addEventListener('mouseleave', function() {
+                cursor.style.opacity = '1';
+                cursorTrail.style.opacity = '1';
+            });
+        });
+
+        // Background music functionality (similar to guns.lol)
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const volumePercentage = document.getElementById('volumePercentage');
+        const volumeControl = document.getElementById('volumeControl');
+        let musicStarted = false;
+
+        // Volume control functionality
+        volumeSlider.addEventListener('input', function() {
+            const volume = this.value / 100;
+            backgroundMusic.volume = volume;
+            volumePercentage.textContent = this.value + '%';
+            
+            // Update volume icon based on level
+            const volumeIcon = document.querySelector('.volume-icon');
+            if (volume === 0) {
+                volumeIcon.innerHTML = '<path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+            } else if (volume < 0.5) {
+                volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
+            } else {
+                volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
+            }
+        });
+
+        // Hide volume control initially and show after entering
+        volumeControl.style.opacity = '0';
+        volumeControl.style.pointerEvents = 'none';
+
+        // Try to start background music on first user interaction
+        function startBackgroundMusic() {
+            if (!musicStarted) {
+                backgroundMusic.volume = volumeSlider.value / 100; // Use slider value
+                backgroundMusic.play().then(() => {
+                    musicStarted = true;
+                    console.log('Background music started');
+                    // Show volume control
+                    volumeControl.style.opacity = '0.8';
+                    volumeControl.style.pointerEvents = 'auto';
+                }).catch(e => {
+                    console.log('Background music failed to start:', e);
+                });
+            }
+        }
+
+        // Start music on first click or key press
+        document.addEventListener('click', startBackgroundMusic, { once: true });
+        document.addEventListener('keydown', startBackgroundMusic, { once: true });
+
+        // Click to Enter functionality
+        const enterOverlay = document.getElementById('enterOverlay');
+        const mainContent = document.getElementById('mainContent');
+
+        // Handle click to enter
+        enterOverlay.addEventListener('click', function() {
+            // Hide overlay
+            enterOverlay.classList.add('hidden');
+            
+            // Show main content
+            setTimeout(() => {
+                mainContent.classList.add('visible');
+            }, 250);
+            
+            // Start background music
+            startBackgroundMusic();
+            
+            // Start video if available
+            const video = document.querySelector('video');
+            if (video) {
+                video.play().catch(e => console.log('Video autoplay failed:', e));
+            }
+        });
+
+        // Prevent main content from showing initially
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure overlay is visible and main content is hidden on load
+            enterOverlay.classList.remove('hidden');
+            mainContent.classList.remove('visible');
+        });
+    </script>
+    </div> <!-- Close main-content -->
 </body>
 </html>
